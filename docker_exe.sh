@@ -1,5 +1,8 @@
-IMAGE_NAME=python:3.6-slim
+IMAGE_NAME=md2gslides
 
+docker build -t ${IMAGE_NAME} .
 docker run -it --rm \
-           -v $PWD:/home \
-           ${IMAGE_NAME} /bin/bash
+           -v $PWD/secrets:/home/secrets \
+           --entrypoint "/bin/bash" \
+           ${IMAGE_NAME}
+docker rmi ${IMAGE_NAME}
