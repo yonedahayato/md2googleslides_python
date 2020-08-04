@@ -5,4 +5,4 @@ ADD . .
 RUN pip install -U pip
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python3", "md2gslides.py"]
+RUN dpkg -i pandoc-2.10.1-1-amd64.deb
