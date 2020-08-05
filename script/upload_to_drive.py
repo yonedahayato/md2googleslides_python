@@ -20,9 +20,13 @@ def upload_to_drive(file_path):
 
     drive = GoogleDrive(gauth)
     f = drive.CreateFile()
+
+    print("file path 1: {}".format(file_path))
+    file_path = file_path.encode('utf-8').decode("utf-8")
+    print("file path 2: {}".format(file_path))
+
     f.SetContentFile(file_path)
     f.Upload()
-    print(file_path)
 
 if __name__ == "__main__":
     args = parser.parse_args()
