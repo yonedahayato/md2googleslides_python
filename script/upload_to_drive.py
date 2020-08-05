@@ -22,6 +22,7 @@ def upload_to_drive(file_path):
     f = drive.CreateFile()
     f.SetContentFile(file_path)
     f.Upload()
+    print(file_path)
 
 if __name__ == "__main__":
     args = parser.parse_args()
