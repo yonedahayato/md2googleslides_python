@@ -22,8 +22,12 @@ def upload_to_drive(file_path):
     f = drive.CreateFile()
 
     print("file path 1: {}".format(file_path))
-    file_path = file_path.encode('utf-8')
-    file_path = file_path.decode("utf-8")
+    # file_path = file_path.encode('utf-8')
+    file_path = file_path.encode('utf-16', 'surrogatepass')
+
+    # file_path = file_path.decode("utf-8")
+    file_path = file_path.decode("utf-16")
+
     print("file path 2: {}".format(file_path))
 
     f.SetContentFile(file_path)
