@@ -1,5 +1,3 @@
-export LANG=ja_JP.utf8
-export LC_ALL=ja_JP.utf-8
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 MD_FILE_NAME=$1
