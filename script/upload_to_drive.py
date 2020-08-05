@@ -25,8 +25,7 @@ def upload_to_drive(file_path):
     # file_path = file_path.encode('utf-8')
     file_path = file_path.encode('utf-16', 'surrogatepass')
 
-    # file_path = file_path.decode("utf-8")
-    file_path = file_path.decode("utf-16")
+    file_path = file_path.decode("utf-8")
 
     print("file path 2: {}".format(file_path))
 
