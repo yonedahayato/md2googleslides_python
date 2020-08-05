@@ -24,10 +24,14 @@ def upload_to_drive(file_path):
     print("file path 1: {}".format(file_path))
     # file_path = file_path.encode('utf-8')
     file_path = file_path.encode('utf-16', 'surrogatepass')
-
-    file_path = file_path.decode("utf-8")
-
     print("file path 2: {}".format(file_path))
+    try:
+        file_path = file_path.decode("utf-8")
+    except:
+        print("decode error 'utf-8'")
+        file_path = file_path.decode("Shift_JIS")
+
+    print("file path 3: {}".format(file_path))
 
     f.SetContentFile(file_path)
     f.Upload()
